@@ -1,0 +1,36 @@
+[
+    {
+        "name": "American Cuisine",
+        "image": "american cuisine"
+    },
+    {
+        "name": "African Cuisine",
+        "image": "African Cuisine"
+        
+    },
+    {
+        "name": "Asian Cuisine",
+        "image": "asian cuisine"
+        
+    },
+    {
+        "name": "European Cuisine",
+        "image": "European Cuisine"
+        
+    },
+    {
+        "name": "South Asian Cuisine",
+        "image": "Indian Cuisine"
+        
+    },
+    {
+        "name": "Latin American Cuisine",
+        "image": "latin american cuisine"
+        
+    },
+    {
+        "name": "Middle Eastern/North African Cuisine",
+        "image": "Middle Eastern Cuisine"
+        
+    }
+]
