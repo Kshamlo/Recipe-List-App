@@ -23,7 +23,7 @@ struct RecipeByRegionView: View {
                         NavigationLink(
                             destination: RecipeDetailView(recipe:recipe),
                             label: {
-                                HStack(spacing: 20.0){
+                                VStack(spacing: 20.0){
                                     Image(recipe.image)
                                         .resizable()
                                         .scaledToFill()
