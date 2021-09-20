@@ -19,7 +19,7 @@ struct RecipeTabView: View {
                     }
                 }
             
-            RecipeListView()
+            MultipleColumnView()
                 .tabItem {
                     VStack {
                         Image(systemName: "list.bullet")
