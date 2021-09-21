@@ -1,10 +1,3 @@
-//
-//  MultipleColumnView.swift
-//  Recipe List App
-//
-//  Created by Kora Shamloo on 9/17/21.
-//
-
 import SwiftUI
 
 struct MultipleColumnView: View {
@@ -17,13 +10,13 @@ struct MultipleColumnView: View {
         
         NavigationView {
             
-            VStack(alignment: .leading) {
+            VStack(alignment:.leading) {
                 
                 Text("All Recipes")
                     .bold()
                     .font(.largeTitle)
                     .foregroundColor(.red)
-                    .padding(.horizontal, 12)
+                    .padding(.horizontal)
                 
                 ScrollView {
                     LazyVGrid(columns: [
@@ -43,19 +36,19 @@ struct MultipleColumnView: View {
                                         Image(r.image)
                                             .resizable()
                                             .scaledToFill()
-                                            .frame(width: 175, height: 175, alignment: .center)
+                                            .frame(width: 150, height: 150, alignment: .center)
                                             .clipped()
                                             .cornerRadius(5)
-                                        
+                                            
 
                                         Text(r.name)
                                             .font(.system(size:16, weight: .semibold))
                                             .accentColor(.black)
-                                            .frame(width: 175, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                            .frame(width: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                             RecipeHighlights(highlights: r.highlights)
                                                 .font(.system(size:12, weight: .regular))
                                                 .accentColor(.gray)
-                                                .frame(width: 175, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                                .frame(width: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                         Spacer()
                                     }
                                 })

@@ -33,7 +33,7 @@ struct RegionsView: View {
                                 .fontWeight(.bold)
                                 .foregroundColor(.red
                                 )
-                                .padding(.leading, -80)
+                                .padding(.leading)
                             
                             ScrollView {
                             

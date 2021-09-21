@@ -1,9 +1,10 @@
 //
-//  RecipeByRegionView.swift
+//  RecipeByRegionsView.swift
 //  Recipe List App
 //
-//  Created by Kora Shamloo on 9/15/21.
+//  Created by Kora Shamloo on 9/21/21.
 //
+
 
 import SwiftUI
 
@@ -23,7 +24,7 @@ struct RecipeByRegionView: View {
                         NavigationLink(
                             destination: RecipeDetailView(recipe:recipe),
                             label: {
-                                VStack(spacing: 20.0){
+                                HStack(spacing: 20.0){
                                     Image(recipe.image)
                                         .resizable()
                                         .scaledToFill()
