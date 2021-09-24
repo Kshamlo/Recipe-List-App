@@ -11,6 +11,23 @@ struct RecipeListView: View {
     
     @EnvironmentObject var model:RecipeModel
     
+    @State private var filterBy = ""
+    
+    private var filteredRecipes: [Recipe] {
+        
+        if filterBy.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            // No filter text, so return all recipes
+            return Array(model.recipes)
+        }
+        else {
+            // Filter by the search term and return
+            // a subset of recipes which contain the search term in the name
+            return model.recipes.filter { r in
+                return r.name.contains(filterBy)
+            }
+        }
+    }
+    
     
     var body: some View {
         
@@ -24,9 +41,13 @@ struct RecipeListView: View {
                     .font(.largeTitle)
                     .foregroundColor(.red)
                 
+                SearchBarView(filterBy: $filterBy)
+                    .padding([.trailing, .bottom])
+                
+                
                 ScrollView{
                     LazyVStack(alignment:.leading) {
-                        ForEach(model.recipes) { r in
+                        ForEach(filteredRecipes) { r in
                             
                             NavigationLink(
                                 destination: RecipeDetailView(recipe:r),
@@ -58,6 +79,9 @@ struct RecipeListView: View {
             }
             .navigationBarHidden(true)
             .padding(.leading)
+            .onTapGesture {
+                // Resign first responder
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
 
     }
@@ -70,3 +94,4 @@ struct  RecipeListView_Previews: PreviewProvider {
     }
 }
 
+}

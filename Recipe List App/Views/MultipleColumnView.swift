@@ -4,6 +4,24 @@ struct MultipleColumnView: View {
     
     @EnvironmentObject var model:RecipeModel
     
+    @State private var filterBy = ""
+    
+    private var filteredRecipes: [Recipe] {
+        
+        if filterBy.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            // No filter text, so return all recipes
+            return Array(model.recipes)
+        }
+        else {
+            // Filter by the search term and return
+            // a subset of recipes which contain the search term in the name
+            return model.recipes.filter { r in
+                return r.name.contains(filterBy)
+            }
+        }
+    }
+
+    
     
     var body: some View {
         
@@ -18,6 +36,9 @@ struct MultipleColumnView: View {
                     .foregroundColor(.red)
                     .padding(.horizontal)
                 
+                SearchBarView(filterBy: $filterBy)
+                    .padding([.trailing, .bottom])
+                
                 ScrollView {
                     LazyVGrid(columns: [
                         GridItem(.flexible(minimum: 50, maximum: 200), spacing: 16, alignment: .top),
@@ -26,7 +47,7 @@ struct MultipleColumnView: View {
                     ], alignment: .leading, content: {
                         
                         
-                        ForEach(model.recipes) { r in
+                        ForEach(filteredRecipes) { r in
                             NavigationLink(
                                 destination: RecipeDetailView(recipe:r),
                                 label: {
@@ -56,6 +77,12 @@ struct MultipleColumnView: View {
                         }
                         
                     }).padding(.horizontal, 12)
+                    .navigationBarHidden(true)
+                    .onTapGesture {
+                        // Resign first responder
+                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                }
+                    
                     
                 }
                 
