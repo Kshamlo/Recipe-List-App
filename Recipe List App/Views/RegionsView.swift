@@ -54,7 +54,7 @@ struct RegionsView: View {
                                                 }
                                                 .frame(width: geo.size.width - 40, height: geo.size.height/3, alignment: .center)
                                                 .cornerRadius(15)
-                                            })
+                                            }) .navigationBarHidden(true)
 
 
                                     }
@@ -62,7 +62,7 @@ struct RegionsView: View {
                         }
 
                     }
-                    Spacer()
+      
                 }
              
             }

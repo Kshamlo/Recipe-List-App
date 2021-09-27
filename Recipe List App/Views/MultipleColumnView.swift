@@ -38,6 +38,7 @@ struct MultipleColumnView: View {
                 
                 SearchBarView(filterBy: $filterBy)
                     .padding([.trailing, .bottom])
+                    
                 
                 ScrollView {
                     LazyVGrid(columns: [
