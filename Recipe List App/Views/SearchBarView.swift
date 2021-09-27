@@ -24,7 +24,7 @@ struct SearchBarView: View {
                 
                 Image(systemName: "magnifyingglass")
                 
-                TextField("Filter by...", text: $filterBy)
+                TextField("Search recipe...", text: $filterBy)
                 
                 Button {
                     // Clear the text field

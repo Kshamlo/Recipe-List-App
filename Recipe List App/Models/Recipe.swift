@@ -13,6 +13,7 @@ class Recipe: Identifiable, Decodable {
     var name:String
     var region:String?
     var featured:Bool
+    var isFavorite: Bool
     var image:String
     var description:String
     var prepTime:String
