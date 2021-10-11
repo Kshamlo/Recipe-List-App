@@ -4,7 +4,7 @@ struct MultipleColumnView: View {
     
     @EnvironmentObject var model:RecipeModel
 
-    @State var showFavoritesOnly = true
+    @State var showFavoritesOnly = false
     
     @State private var filterBy = ""
     
@@ -33,14 +33,15 @@ struct MultipleColumnView: View {
             
             VStack(alignment:.leading) {
                 
-                Text("All Recipes")
+                Text("Recipes")
                     .bold()
                     .font(.largeTitle)
                     .foregroundColor(.red)
                     .padding(.horizontal)
-                
+               
                 SearchBarView(filterBy: $filterBy)
-                    .padding([.trailing, .bottom])
+                    .padding([.trailing, .bottom, .horizontal])
+                
                 
                 Toggle(isOn: $showFavoritesOnly) {
                     Text("Show Favorites Only")
@@ -54,53 +55,59 @@ struct MultipleColumnView: View {
                         GridItem(.flexible(minimum: 50, maximum: 200), spacing: 16),
                         
                     ], alignment: .leading, content: {
-                        
-                     
+                        ForEach(filteredRecipes) { r in
                             
-                            
-                            ForEach(filteredRecipes) { r in
+                            if !self.showFavoritesOnly || r.isFavorite {
                                 
-                                if !self.showFavoritesOnly || r.isFavorite {
-                                    
-                                    NavigationLink(
-                                        destination: RecipeDetailView(recipe:r),
-                                        label: {
-                                            VStack(alignment: .leading, spacing: 4) {
+                                NavigationLink(
+                                    destination: RecipeDetailView(recipe:r),
+                                    label: {
+                                        VStack(alignment: .leading, spacing: 4) {
+                                            
+                                            ZStack {
+                                                Image(r.image)
+                                                    .resizable()
+                                                    .scaledToFill()
+                                                    .frame(width: 150, height: 150, alignment: .center)
+                                                    .clipped()
+                                                    .cornerRadius(5)
                                                 
-                                                ZStack {
-                                                    Image(r.image)
-                                                        .resizable()
-                                                        .scaledToFill()
-                                                        .frame(width: 150, height: 150, alignment: .center)
-                                                        .clipped()
-                                                        .cornerRadius(5)
-                                                    if r.isFavorite {
-                                                        Image(systemName: "star.fill")
-                                                            .foregroundColor(.white)
-                                                            .imageScale(.medium)
+                                                if r.isFavorite {
+                                                    VStack {
+                                                        Spacer()
+                                                        HStack {
+                                                            Spacer()
+                                                            Image(systemName: "heart.fill")
+                                                                .foregroundColor(.white)
+                                                                .imageScale(.medium)
+                                                                .padding(.horizontal)
+                                                                .padding(.bottom, 5)
+                                                                .onTapGesture(perform: {
+                                                                    r.isFavorite = false
+                                                                    
+                                                                })
+                                                        }
                                                     }
                                                 }
-                                                
-                                                
-                                                Text(r.name)
-                                                    .font(.system(size:16, weight: .semibold))
-                                                    .accentColor(.black)
-                                                    .frame(width: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                                RecipeHighlights(highlights: r.highlights)
-                                                    .font(.system(size:12, weight: .regular))
-                                                    .accentColor(.gray)
-                                                    .frame(width: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                                Spacer()
-                                                
-                                                
                                             }
-                                        })
-                                    
-                                }
+                                            
+                                            
+                                            Text(r.name)
+                                                .font(.system(size:16, weight: .semibold))
+                                                .accentColor(.black)
+                                                .frame(width: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                            RecipeHighlights(highlights: r.highlights)
+                                                .font(.system(size:12, weight: .regular))
+                                                .accentColor(.gray)
+                                                .frame(width: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                            Spacer()
+                                            
+                                            
+                                        }
+                                    })
+                                
                             }
-                            
-                            
-                    
+                        }
                         
                     }).padding(.horizontal, 12)
                     .navigationBarHidden(true)
@@ -111,6 +118,7 @@ struct MultipleColumnView: View {
                     
                     
                 }
+                
                 
             }
             
@@ -123,5 +131,6 @@ struct MultipleColumnView_Previews: PreviewProvider {
     static var previews: some View {
         MultipleColumnView()
             .environmentObject(RecipeModel())
+
     }
 }
