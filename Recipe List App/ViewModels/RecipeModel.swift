@@ -17,7 +17,7 @@ class RecipeModel: ObservableObject {
 
         self.recipes = DataService.getLocalData()
         self.filteredRecipes = recipes
-        
+                
     }
     
 }
