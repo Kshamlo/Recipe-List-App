@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,7 +15,6 @@
 		3253579926DE9CE600B7AB01 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3253579826DE9CE600B7AB01 /* RecipeDetailView.swift */; };
 		3261479C26FA74A700CC3A42 /* RecipeListGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261479B26FA74A700CC3A42 /* RecipeListGridView.swift */; };
 		326CF75126FE6970002CBB78 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326CF75026FE6970002CBB78 /* SearchBarView.swift */; };
-		326CF75D2702538D002CBB78 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326CF75C2702538D002CBB78 /* Favorites.swift */; };
 		32970DEC26F52C880059DB53 /* MultipleColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32970DEB26F52C870059DB53 /* MultipleColumnView.swift */; };
 		32970DF126FA4A0F0059DB53 /* RecipeByRegionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32970DF026FA4A0F0059DB53 /* RecipeByRegionsView.swift */; };
 		32A7EB6126E7D4EB00AA1E9E /* RecipeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7EB6026E7D4EB00AA1E9E /* RecipeTabView.swift */; };
@@ -41,7 +40,6 @@
 		3253579826DE9CE600B7AB01 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		3261479B26FA74A700CC3A42 /* RecipeListGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListGridView.swift; sourceTree = "<group>"; };
 		326CF75026FE6970002CBB78 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
-		326CF75C2702538D002CBB78 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		32970DEB26F52C870059DB53 /* MultipleColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleColumnView.swift; sourceTree = "<group>"; };
 		32970DF026FA4A0F0059DB53 /* RecipeByRegionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeByRegionsView.swift; sourceTree = "<group>"; };
 		32A7EB6026E7D4EB00AA1E9E /* RecipeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTabView.swift; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 				33CF419A098A0A525F3DE181 /* Pods-Recipe List App.debug.xcconfig */,
 				344274CADFACC5012EAACCAB /* Pods-Recipe List App.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -105,7 +102,6 @@
 		32D7776526DD7BD700AC68F4 /* Recipe List App */ = {
 			isa = PBXGroup;
 			children = (
-				9B9670CE2714EFBB0070BC4B /* GoogleService-Info.plist */,
 				32D7776626DD7BD700AC68F4 /* Recipe_List_App.swift */,
 				32D7777626DD7C6500AC68F4 /* Views */,
 				32D7777726DD7C7500AC68F4 /* ViewModels */,
@@ -114,6 +110,7 @@
 				32D7777926DD7C8B00AC68F4 /* Data */,
 				32D7776A26DD7BDF00AC68F4 /* Assets.xcassets */,
 				32D7776F26DD7BDF00AC68F4 /* Info.plist */,
+				9B9670CE2714EFBB0070BC4B /* GoogleService-Info.plist */,
 				32D7776C26DD7BDF00AC68F4 /* Preview Content */,
 			);
 			path = "Recipe List App";
@@ -149,7 +146,6 @@
 			children = (
 				32D7777F26DD7F9B00AC68F4 /* RecipeModel.swift */,
 				3220DC5B26EAB443007B0F87 /* RegionModel.swift */,
-				326CF75C2702538D002CBB78 /* Favorites.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -318,7 +314,6 @@
 				32D7778226DD81B800AC68F4 /* DataService.swift in Sources */,
 				3220DC5A26EAB2EF007B0F87 /* Region.swift in Sources */,
 				32A7EB7E26E8102E00AA1E9E /* RecipeFeaturedView.swift in Sources */,
-				326CF75D2702538D002CBB78 /* Favorites.swift in Sources */,
 				32A7EB6126E7D4EB00AA1E9E /* RecipeTabView.swift in Sources */,
 				3220DC5026EAA9DE007B0F87 /* RegionsView.swift in Sources */,
 			);

@@ -14,8 +14,10 @@ class RecipeModel: ObservableObject {
     
     init() {
         // Create an instance of data service and get the data
+        
+        let dataService = DataService()
 
-        self.recipes = DataService.getLocalData()
+        self.recipes = dataService.getAllRecipes()
         self.filteredRecipes = recipes
                 
     }
