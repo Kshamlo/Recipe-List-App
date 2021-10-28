@@ -53,12 +53,17 @@ struct RecipeByRegionView: View {
                                 destination: RecipeDetailView(recipe:recipe),
                                 label: {
                                     HStack(spacing: 20.0){
-                                        Image(recipe.image)
-                                            .resizable()
-                                            .scaledToFill()
-                                            .frame(width: 50, height: 50, alignment: .center)
-                                            .clipped()
-                                            .cornerRadius(5)
+                                        AsyncImage(url: URL(string: recipe.image)) { image in
+                                            image
+                                                .resizable()
+                                                .scaledToFill()
+                                                .frame(width: 75, height: 75, alignment: .center)
+                                                .clipped()
+                                                .cornerRadius(5)
+                                        } placeholder: {
+                                            ProgressView()
+                                                .frame(width: 75, height: 75, alignment: .center)
+                                        }
                                         VStack (alignment: .leading) {
                                             Text(recipe.name)
                                                 .foregroundColor(.black)
