@@ -7,8 +7,7 @@ struct MultipleColumnView: View {
     @State var showFavoritesOnly = false
     
     @State private var filterBy = ""
-    
-    
+        
     private var filteredRecipes: [Recipe] {
         
         if filterBy.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
@@ -28,6 +27,7 @@ struct MultipleColumnView: View {
     
     var body: some View {
         
+        let _ = print("recipes", model.recipes)
         
         NavigationView {
             
@@ -55,7 +55,7 @@ struct MultipleColumnView: View {
                         GridItem(.flexible(minimum: 50, maximum: 200), spacing: 16),
                         
                     ], alignment: .leading, content: {
-                        ForEach(filteredRecipes) { r in
+                        ForEach(filteredRecipes, id: \.id) { r in
                             
                             if !self.showFavoritesOnly || r.isFavorite {
                                 
@@ -65,13 +65,23 @@ struct MultipleColumnView: View {
                                         VStack(alignment: .leading, spacing: 4) {
                                             
                                             ZStack {
-                                                Image(r.image)
-                                                    .resizable()
-                                                    .scaledToFill()
-                                                    .frame(width: 150, height: 150, alignment: .center)
-                                                    .clipped()
-                                                    .cornerRadius(5)
-                                                
+//                                                AsyncImage(url: URL(string: r.image))
+//                                                    .resizable()
+//                                                    .scaledToFill()
+//                                                    .frame(width: 150, height: 150, alignment: .center)
+//                                                    .clipped()
+//                                                    .cornerRadius(5)
+                                                AsyncImage(url: URL(string: r.image)) { image in
+                                                    image.resizable()
+                                                        .scaledToFill()
+                                                        .frame(width: 150, height: 150, alignment: .center)
+                                                        .clipped()
+                                                        .cornerRadius(5)
+                                                } placeholder: {
+                                                    ProgressView()
+                                                }
+                                                .frame(width: 150, height: 150, alignment: .center)
+
                                                 if r.isFavorite {
                                                     VStack {
                                                         Spacer()
@@ -83,7 +93,7 @@ struct MultipleColumnView: View {
                                                                 .padding(.horizontal)
                                                                 .padding(.bottom, 5)
                                                                 .onTapGesture(perform: {
-                                                                    r.isFavorite = false
+//                                                                    r.isFavorite = false
                                                                     
                                                                 })
                                                         }

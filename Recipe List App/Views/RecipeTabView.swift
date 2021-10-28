@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum Tab {
-    case Featured
+//    case Featured
     case Search
     case Explore
 }
@@ -24,7 +24,7 @@ struct TabInfo: Identifiable {
 struct RecipeTabView: View {
     
     @State var tabs = [TabInfo]()
-    @State var selectedTab = Tab.Featured
+    @State var selectedTab = Tab.Search
     
     var body: some View {
         
@@ -34,8 +34,8 @@ struct RecipeTabView: View {
                 
                 // Swith the view according to the currently selected tab
                 switch(selectedTab) {
-                case Tab.Featured:
-                    RecipeFeaturedView()
+//                case Tab.Featured:
+//                    RecipeFeaturedView()
                 case Tab.Search:
                     MultipleColumnView()
                 case Tab.Explore:
@@ -85,7 +85,7 @@ struct RecipeTabView: View {
             .onAppear(perform: {
                 
                 var newTabs = [TabInfo]()
-                newTabs.append(TabInfo(view: Tab.Featured, icon: "star.fill", name: "Featured"))
+//                newTabs.append(TabInfo(view: Tab.Featured, icon: "star.fill", name: "Featured"))
                 newTabs.append(TabInfo(view: Tab.Search, icon: "magnifyingglass", name: "Search"))
                 newTabs.append(TabInfo(view: Tab.Explore, icon: "magnifyingglass", name: "Explore"))
                 self.tabs = newTabs

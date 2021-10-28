@@ -13,14 +13,18 @@ class DataService {
     private var db = Firestore.firestore()
     
     func getAllRecipes() -> [Recipe] {
+        print("getAllRecipes called")
         let recipesCollection = db.collection("recipes")
         var recipes: [Recipe] = []
         
+        print("getting all documents")
         recipesCollection.getDocuments { querySnapshot, error in
             if let error = error {
+                print("ERROR")
                 print(error)
             } else if let querySnapshot = querySnapshot {
                 for document in querySnapshot.documents {
+                    print("document id", document.documentID)
                     let result = Result { try document.data(as: Recipe.self) }
                     switch result {
                     case .success(let recipe):
@@ -49,7 +53,6 @@ class DataService {
                 }
             }
         }
-        
         return recipes
     }
     
