@@ -19,6 +19,8 @@ struct RecipeDetailView: View {
                 AsyncImage(url: URL(string: recipe.image)) { image in
                     image.resizable()
                         .scaledToFit()
+                        .frame(width: 400, height: 400)
+                        .navigationBarHidden(true)
                 } placeholder: {
                     ProgressView()
                 }
@@ -40,6 +42,8 @@ struct RecipeDetailView: View {
 
                     ForEach (recipe.ingredients) { item in
                         Text(item.description)
+                            .padding(.horizontal, 10)
+                            .padding(.top, 10)
                     }
 
                 }
