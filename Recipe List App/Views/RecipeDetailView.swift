@@ -28,16 +28,51 @@ struct RecipeDetailView: View {
                 //Mark: Recipe title
                 Text(recipe.name)
                     .bold()
-                    .padding(.top, 20)
+                    .padding(.top)
                     .padding(.leading)
                     .font(.largeTitle)
                     .foregroundColor(.red)
+                
+                //MARK: Divider
+                Divider()
+                    .frame(height: 10)
+                
+                
+//              Adding prep, cook, and total time
+
+                HStack(alignment: .center){
+                    Spacer()
+                    
+                    VStack{
+                    Text("Prep Time" + ":" ).bold()
+                        Text(recipe.prepTime)
+                    }
+                    
+                    Spacer()
+                    
+                    VStack{
+                    Text("Cook Time" + ":" ).bold()
+                        Text(recipe.cookTime)
+                    }
+                    
+                    Spacer()
+                    
+                    VStack{
+                    Text("Total Time" + ":" ).bold()
+                        Text(recipe.totalTime)
+                    }
+                    
+                    Spacer()
+                }
+                
+
 
                 // MARK: Ingredients
                 VStack (alignment: .leading){
                     Text("Ingredients")
                         .font(.headline)
                         .padding([.bottom, .top], 5)
+                        .padding(.horizontal, 5)
                         .foregroundColor(.red)
 
                     ForEach (recipe.ingredients) { item in
@@ -51,22 +86,31 @@ struct RecipeDetailView: View {
 
                 //MARK: Divider
                 Divider()
+                    .frame(height: 10)
 
                 //MARK: Directions
                 VStack(alignment: .leading) {
                     Text("Directions")
                         .font(.headline)
                         .padding([.bottom, .top], 5)
+                        .padding(.horizontal, 5)
                         .foregroundColor(.red)
 
                     ForEach(0..<recipe.directions.count) { index in
 
-                        Text(String(index+1) + "." + recipe.directions[index])
+                        Text(String(index+1) + "." + " " + recipe.directions[index])
                             .padding(.bottom, 5)
+                            .padding(.horizontal, 10)
                     }
                 }
                 .padding(.horizontal)
             }
+            
+            
+            Text("This recipe is from" + " " + recipe.from)
+                .padding(.top, 15)
+                .opacity(0.4)
+
 
         }
 
