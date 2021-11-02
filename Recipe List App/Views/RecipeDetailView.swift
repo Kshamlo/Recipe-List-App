@@ -24,7 +24,7 @@ struct RecipeDetailView: View {
                 } placeholder: {
                     ProgressView()
                 }
-
+                
                 //Mark: Recipe title
                 Text(recipe.name)
                     .bold()
@@ -33,61 +33,76 @@ struct RecipeDetailView: View {
                     .font(.largeTitle)
                     .foregroundColor(.red)
                 
+                Text(recipe.description)
+                    .padding(.leading)
+                    .padding(.trailing)
+                    .padding(.top, 1)
+                
                 //MARK: Divider
                 Divider()
                     .frame(height: 10)
                 
                 
-//              Adding prep, cook, and total time
-
+                // Adding prep, cook, and total time
+                
                 HStack(alignment: .center){
                     Spacer()
                     
                     VStack{
-                    Text("Prep Time" + ":" ).bold()
+                        Text("Prep Time" + ":" ).bold()
                         Text(recipe.prepTime)
                     }
                     
                     Spacer()
                     
                     VStack{
-                    Text("Cook Time" + ":" ).bold()
+                        Text("Cook Time" + ":" ).bold()
                         Text(recipe.cookTime)
                     }
                     
                     Spacer()
                     
                     VStack{
-                    Text("Total Time" + ":" ).bold()
+                        Text("Total Time" + ":" ).bold()
                         Text(recipe.totalTime)
                     }
                     
                     Spacer()
                 }
+                .padding(.leading)
+                .padding(.trailing)
                 
-
-
                 // MARK: Ingredients
                 VStack (alignment: .leading){
+                    
+                    HStack {
                     Text("Ingredients")
                         .font(.headline)
                         .padding([.bottom, .top], 5)
                         .padding(.horizontal, 5)
                         .foregroundColor(.red)
+                        
+                    Spacer()
+                    
+                        Text("Servings: " + String(recipe.servings))
+                            .padding(.trailing, 5)
+                            .opacity(0.5)
 
+                    }
+                    
                     ForEach (recipe.ingredients) { item in
                         Text(item.description)
                             .padding(.horizontal, 10)
                             .padding(.top, 10)
                     }
-
+                    
                 }
                 .padding(.horizontal)
-
+                
                 //MARK: Divider
                 Divider()
                     .frame(height: 10)
-
+                
                 //MARK: Directions
                 VStack(alignment: .leading) {
                     Text("Directions")
@@ -95,9 +110,9 @@ struct RecipeDetailView: View {
                         .padding([.bottom, .top], 5)
                         .padding(.horizontal, 5)
                         .foregroundColor(.red)
-
+                    
                     ForEach(0..<recipe.directions.count) { index in
-
+                        
                         Text(String(index+1) + "." + " " + recipe.directions[index])
                             .padding(.bottom, 5)
                             .padding(.horizontal, 10)
@@ -110,10 +125,12 @@ struct RecipeDetailView: View {
             Text("This recipe is from" + " " + recipe.from)
                 .padding(.top, 15)
                 .opacity(0.4)
-
-
+            
+            
+            
+            
         }
-
+        
     }
 }
 

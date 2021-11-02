@@ -86,7 +86,7 @@ struct RecipeTabView: View {
                 
                 var newTabs = [TabInfo]()
 //                newTabs.append(TabInfo(view: Tab.Featured, icon: "star.fill", name: "Featured"))
-                newTabs.append(TabInfo(view: Tab.Search, icon: "magnifyingglass", name: "Search"))
+                newTabs.append(TabInfo(view: Tab.Search, icon: "list.bullet", name: "Recipes"))
                 newTabs.append(TabInfo(view: Tab.Explore, icon: "magnifyingglass", name: "Explore"))
                 self.tabs = newTabs
             })

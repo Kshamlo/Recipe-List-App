@@ -55,6 +55,7 @@ struct RecipeByRegionView: View {
                             NavigationLink(
                                 destination: RecipeDetailView(recipe:recipe),
                                 label: {
+                                    
                                     VStack(spacing: 20.0){
                                         AsyncImage(url: URL(string: recipe.image)) { image in
                                             image
@@ -79,6 +80,7 @@ struct RecipeByRegionView: View {
                                         }
                                     }
                                 })
+                            
                         }
                     })
                     .padding(.horizontal)
