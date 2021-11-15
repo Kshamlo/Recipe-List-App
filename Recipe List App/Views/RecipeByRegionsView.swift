@@ -33,16 +33,19 @@ struct RecipeByRegionView: View {
     
     var body: some View {
         
-        NavigationView {
+//        NavigationView {
             let regionRecipes = filteredRecipes.filter { $0.region == region.name }
+               
             
             VStack (alignment:.leading) {
+           
                 Text(region.name)
                     .bold()
                     .font(.largeTitle)
                     .foregroundColor(.red)
                     .padding(.horizontal)
-                
+                    .padding(.top, 100)
+
                 SearchBarView(filterBy: $filterBy)
                     .padding([.trailing, .bottom, .horizontal])
                 
@@ -80,11 +83,9 @@ struct RecipeByRegionView: View {
                                         }
                                     }
                                 })
-                            
                         }
                     })
                     .padding(.horizontal)
-                    .navigationBarHidden(true)
                     .onTapGesture {
                         // Resign first responder
                         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
@@ -92,12 +93,7 @@ struct RecipeByRegionView: View {
 
             }
 
-            
-            
-            
-        }
-
-        }
+            } .edgesIgnoringSafeArea(.all)
     }
     
     struct RecipeByRegionView_Previews: PreviewProvider {
