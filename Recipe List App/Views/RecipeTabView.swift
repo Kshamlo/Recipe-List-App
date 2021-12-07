@@ -11,6 +11,7 @@ enum Tab {
 //    case Featured
     case Search
     case Explore
+    case Account
 }
 
 struct TabInfo: Identifiable {
@@ -23,11 +24,12 @@ struct TabInfo: Identifiable {
 
 struct RecipeTabView: View {
     
+    @Binding var loggedIn: Bool
     @State var tabs = [TabInfo]()
     @State var selectedTab = Tab.Search
     
+    
     var body: some View {
-        
         
         GeometryReader { geo in
             VStack {
@@ -40,6 +42,8 @@ struct RecipeTabView: View {
                     MultipleColumnView()
                 case Tab.Explore:
                     RegionsView()
+                case Tab.Account:
+                    AccountView(loggedIn: $loggedIn)
                 }
                 
                 
@@ -88,6 +92,7 @@ struct RecipeTabView: View {
 //                newTabs.append(TabInfo(view: Tab.Featured, icon: "star.fill", name: "Featured"))
                 newTabs.append(TabInfo(view: Tab.Search, icon: "magnifyingglass", name: "Search"))
                 newTabs.append(TabInfo(view: Tab.Explore, icon: "magnifyingglass", name: "Explore"))
+                newTabs.append(TabInfo(view: Tab.Account, icon: "person", name: "Account"))
                 self.tabs = newTabs
             })
 
@@ -98,9 +103,10 @@ struct RecipeTabView: View {
     
     
     
-    struct RecipeTabView_Previews: PreviewProvider {
-        static var previews: some View {
-            RecipeTabView()
-        }
-    }
+//    struct RecipeTabView_Previews: PreviewProvider {
+//        static var previews: some View {
+//            @State var loggedIn = true
+//            RecipeTabView(loggedIn: $loggedIn)
+//        }
+//    }
 }

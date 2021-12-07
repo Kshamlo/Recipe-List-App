@@ -49,6 +49,7 @@ class RecipeModel: ObservableObject {
                         }
                     case .failure(let error):
                         // A Book value could not be initialized from the DocumentSnapshot.
+                        print("document:", document.data())
                         switch error {
                         case DecodingError.typeMismatch(_, let context):
                             print("\(error.localizedDescription): \(context.debugDescription)")
