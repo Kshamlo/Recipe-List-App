@@ -43,11 +43,11 @@ struct MultipleColumnView: View {
                     .padding([.trailing, .bottom, .horizontal])
                 
                 
-                Toggle(isOn: $showFavoritesOnly) {
-                    Text("Show Favorites Only")
-                        .font(.body)
-                }
-                .padding(.horizontal)
+//                Toggle(isOn: $showFavoritesOnly) {
+//                    Text("Show Favorites Only")
+//                        .font(.body)
+//                }
+//                .padding(.horizontal)
                 
                 ScrollView {
                     LazyVGrid(columns: [
@@ -56,9 +56,7 @@ struct MultipleColumnView: View {
                         
                     ], alignment: .leading, content: {
                         ForEach(filteredRecipes, id: \.id) { r in
-                            
-                            if !self.showFavoritesOnly || r.isFavorite {
-                                
+      
                                 NavigationLink(
                                     destination: RecipeDetailView(recipe:r),
                                     label: {
@@ -82,23 +80,6 @@ struct MultipleColumnView: View {
                                                 }
                                                 .frame(width: 150, height: 150, alignment: .center)
 
-                                                if r.isFavorite {
-                                                    VStack {
-                                                        Spacer()
-                                                        HStack {
-                                                            Spacer()
-                                                            Image(systemName: "heart.fill")
-                                                                .foregroundColor(.white)
-                                                                .imageScale(.medium)
-                                                                .padding(.horizontal)
-                                                                .padding(.bottom, 5)
-                                                                .onTapGesture(perform: {
-//                                                                    r.isFavorite = false
-                                                                    
-                                                                })
-                                                        }
-                                                    }
-                                                }
                                             }
                                             
                                             
@@ -116,7 +97,7 @@ struct MultipleColumnView: View {
                                         }
                                     })
                                 
-                            }
+                            
                         }
                         
                     }).padding(.horizontal, 12)

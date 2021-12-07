@@ -23,7 +23,6 @@
 		32D7776926DD7BD700AC68F4 /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D7776826DD7BD700AC68F4 /* RecipeListView.swift */; };
 		32D7776B26DD7BDF00AC68F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D7776A26DD7BDF00AC68F4 /* Assets.xcassets */; };
 		32D7776E26DD7BDF00AC68F4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D7776D26DD7BDF00AC68F4 /* Preview Assets.xcassets */; };
-		32D7777C26DD7D8D00AC68F4 /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 32D7777B26DD7D8D00AC68F4 /* recipes.json */; };
 		32D7777E26DD7E6600AC68F4 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D7777D26DD7E6600AC68F4 /* Recipe.swift */; };
 		32D7778026DD7F9B00AC68F4 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D7777F26DD7F9B00AC68F4 /* RecipeModel.swift */; };
 		32D7778226DD81B800AC68F4 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D7778126DD81B800AC68F4 /* DataService.swift */; };
@@ -53,7 +52,6 @@
 		32D7776A26DD7BDF00AC68F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32D7776D26DD7BDF00AC68F4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		32D7776F26DD7BDF00AC68F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		32D7777B26DD7D8D00AC68F4 /* recipes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipes.json; sourceTree = "<group>"; };
 		32D7777D26DD7E6600AC68F4 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		32D7777F26DD7F9B00AC68F4 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		32D7778126DD81B800AC68F4 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -171,7 +169,6 @@
 		32D7777926DD7C8B00AC68F4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				32D7777B26DD7D8D00AC68F4 /* recipes.json */,
 				3220DC5126EAAC23007B0F87 /* regions.json */,
 			);
 			path = Data;
@@ -255,7 +252,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				32D7776E26DD7BDF00AC68F4 /* Preview Assets.xcassets in Resources */,
-				32D7777C26DD7D8D00AC68F4 /* recipes.json in Resources */,
 				32D7776B26DD7BDF00AC68F4 /* Assets.xcassets in Resources */,
 				9B9670CF2714EFBB0070BC4B /* GoogleService-Info.plist in Resources */,
 				3220DC5226EAAC23007B0F87 /* regions.json in Resources */,

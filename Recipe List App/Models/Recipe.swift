@@ -21,6 +21,7 @@ class Recipe: Identifiable, Codable {
     var totalTime:String { return _totalTime ?? "" }
     var servings:Int { return _servings ?? 1 }
     var highlights:[String] { return _highlights ?? [] }
+    var from:String {return _from ?? ""}
     var ingredients:[Ingredient] { return _ingredients ?? [] }
     var directions:[String] { return _directions ?? [] }
     
@@ -36,6 +37,7 @@ class Recipe: Identifiable, Codable {
     private var _highlights:[String]?
     private var _ingredients:[Ingredient]?
     private var _directions:[String]?
+    private var _from:String?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -52,6 +54,7 @@ class Recipe: Identifiable, Codable {
         case _highlights = "highlights"
         case _ingredients = "ingredients"
         case _directions = "directions"
+        case _from = "from"
     }
 }
 

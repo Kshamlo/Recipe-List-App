@@ -28,36 +28,47 @@ struct RegionsView: View {
                     NavigationView {
                         
                         VStack {
+                            Spacer()
                             Text("Recipe By Regions")
                                 .font(.largeTitle)
                                 .fontWeight(.bold)
                                 .foregroundColor(.red
                                 )
-                                .padding(.leading)
+                            Spacer()
                             
                             ScrollView {
+                                
+                               
                             
                                     ForEach(model.regions) { r in
-
+                                        
                                         NavigationLink(
                                             destination: RecipeByRegionView(region: r).environmentObject(recipeModel),
                                             label: {
-                                                ZStack {
                                                 
+                                            
+                                                
+                                                ZStack {
+                                                    Spacer()
                                                     Image(r.image)
                                                         .colorMultiply(Color(red: 0.5, green: 0.5, blue: 0.5))
                                                     Text(r.name)
                                                         .font(.title)
                                                         .fontWeight(.semibold)
                                                         .foregroundColor(Color.white)
-                                                        
+                                                    Spacer()
                                                 }
                                                 .frame(width: geo.size.width - 40, height: geo.size.height/3, alignment: .center)
                                                 .cornerRadius(15)
+                                                
+                                                
+                                            
+                                                
                                             }) .navigationBarHidden(true)
 
 
                                     }
+                                
                             }
                         }
 
