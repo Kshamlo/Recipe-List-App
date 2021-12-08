@@ -56,8 +56,6 @@ struct RegionsView: View {
                                                         .font(.title)
                                                         .fontWeight(.semibold)
                                                         .foregroundColor(Color.white)
-                                                        .frame(width: 300, height: 300, alignment: .center)
-                                                        
                                                     Spacer()
                                                 }
                                                 .frame(width: geo.size.width - 40, height: geo.size.height/3, alignment: .center)

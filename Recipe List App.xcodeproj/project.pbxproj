@@ -12,7 +12,6 @@
 		3220DC5226EAAC23007B0F87 /* regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 3220DC5126EAAC23007B0F87 /* regions.json */; };
 		3220DC5A26EAB2EF007B0F87 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3220DC5926EAB2EF007B0F87 /* Region.swift */; };
 		3220DC5C26EAB443007B0F87 /* RegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3220DC5B26EAB443007B0F87 /* RegionModel.swift */; };
-		3240B72F27406183008ACD1A /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3240B72E27406183008ACD1A /* SidebarView.swift */; };
 		3253579926DE9CE600B7AB01 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3253579826DE9CE600B7AB01 /* RecipeDetailView.swift */; };
 		3261479C26FA74A700CC3A42 /* RecipeListGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261479B26FA74A700CC3A42 /* RecipeListGridView.swift */; };
 		326CF75126FE6970002CBB78 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326CF75026FE6970002CBB78 /* SearchBarView.swift */; };
@@ -27,7 +26,10 @@
 		32D7777E26DD7E6600AC68F4 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D7777D26DD7E6600AC68F4 /* Recipe.swift */; };
 		32D7778026DD7F9B00AC68F4 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D7777F26DD7F9B00AC68F4 /* RecipeModel.swift */; };
 		32D7778226DD81B800AC68F4 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D7778126DD81B800AC68F4 /* DataService.swift */; };
+		9B0B1014275FF98200EEC8C8 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0B1013275FF98100EEC8C8 /* LaunchView.swift */; };
+		9B117F8E2731CCFF00A9F609 /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B117F8D2731CCFE00A9F609 /* LoginForm.swift */; };
 		9B9670CF2714EFBB0070BC4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B9670CE2714EFBB0070BC4B /* GoogleService-Info.plist */; };
+		9BA4189727601241006468DB /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA4189627601241006468DB /* AccountView.swift */; };
 		9CF2BF8908BAB95D3140CCC2 /* Pods_Recipe_List_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3D066524D798E6C6585621 /* Pods_Recipe_List_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +39,6 @@
 		3220DC5126EAAC23007B0F87 /* regions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = regions.json; sourceTree = "<group>"; };
 		3220DC5926EAB2EF007B0F87 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		3220DC5B26EAB443007B0F87 /* RegionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionModel.swift; sourceTree = "<group>"; };
-		3240B72E27406183008ACD1A /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		3253579826DE9CE600B7AB01 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		3261479B26FA74A700CC3A42 /* RecipeListGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListGridView.swift; sourceTree = "<group>"; };
 		326CF75026FE6970002CBB78 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -57,7 +58,10 @@
 		33CF419A098A0A525F3DE181 /* Pods-Recipe List App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipe List App.debug.xcconfig"; path = "Target Support Files/Pods-Recipe List App/Pods-Recipe List App.debug.xcconfig"; sourceTree = "<group>"; };
 		344274CADFACC5012EAACCAB /* Pods-Recipe List App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipe List App.release.xcconfig"; path = "Target Support Files/Pods-Recipe List App/Pods-Recipe List App.release.xcconfig"; sourceTree = "<group>"; };
 		4F3D066524D798E6C6585621 /* Pods_Recipe_List_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recipe_List_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B0B1013275FF98100EEC8C8 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		9B117F8D2731CCFE00A9F609 /* LoginForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForm.swift; sourceTree = "<group>"; };
 		9B9670CE2714EFBB0070BC4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9BA4189627601241006468DB /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +141,9 @@
 				32970DEB26F52C870059DB53 /* MultipleColumnView.swift */,
 				3261479B26FA74A700CC3A42 /* RecipeListGridView.swift */,
 				32970DF026FA4A0F0059DB53 /* RecipeByRegionsView.swift */,
-				3240B72E27406183008ACD1A /* SidebarView.swift */,
+				9B117F8D2731CCFE00A9F609 /* LoginForm.swift */,
+				9B0B1013275FF98100EEC8C8 /* LaunchView.swift */,
+				9BA4189627601241006468DB /* AccountView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,6 +203,7 @@
 				32D7776126DD7BD700AC68F4 /* Resources */,
 				0698931E3103B4E99F19B894 /* [CP] Embed Pods Frameworks */,
 				9BBCC800272A24BA00530CA7 /* ShellScript */,
+				EE76BA27D611623594B978E3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -310,6 +317,23 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#if which swiftlint >/dev/null; then\n#  swiftlint\n#else\n#  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi\n";
 		};
+		EE76BA27D611623594B978E3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Recipe List App/Pods-Recipe List App-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Recipe List App/Pods-Recipe List App-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Recipe List App/Pods-Recipe List App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -323,15 +347,17 @@
 				3253579926DE9CE600B7AB01 /* RecipeDetailView.swift in Sources */,
 				326CF75126FE6970002CBB78 /* SearchBarView.swift in Sources */,
 				3220DBC326E95ACD007B0F87 /* RecipeHighlights.swift in Sources */,
+				9B117F8E2731CCFF00A9F609 /* LoginForm.swift in Sources */,
+				9B0B1014275FF98200EEC8C8 /* LaunchView.swift in Sources */,
 				32D7778026DD7F9B00AC68F4 /* RecipeModel.swift in Sources */,
 				32D7776926DD7BD700AC68F4 /* RecipeListView.swift in Sources */,
 				3261479C26FA74A700CC3A42 /* RecipeListGridView.swift in Sources */,
 				32D7776726DD7BD700AC68F4 /* Recipe_List_App.swift in Sources */,
 				32970DEC26F52C880059DB53 /* MultipleColumnView.swift in Sources */,
+				9BA4189727601241006468DB /* AccountView.swift in Sources */,
 				32D7778226DD81B800AC68F4 /* DataService.swift in Sources */,
 				3220DC5A26EAB2EF007B0F87 /* Region.swift in Sources */,
 				32A7EB7E26E8102E00AA1E9E /* RecipeFeaturedView.swift in Sources */,
-				3240B72F27406183008ACD1A /* SidebarView.swift in Sources */,
 				32A7EB6126E7D4EB00AA1E9E /* RecipeTabView.swift in Sources */,
 				3220DC5026EAA9DE007B0F87 /* RegionsView.swift in Sources */,
 			);
