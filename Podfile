@@ -8,7 +8,6 @@ target 'Recipe List App' do
   # Pods for Recipe List App
   pod 'Firebase/Analytics'
   pod 'Firebase/Firestore'
-  pod 'FirebaseFirestoreSwift', '>= 8.9.0-beta'
-  pod 'FirebaseUI'
+  pod 'FirebaseFirestoreSwift'
 
 end
