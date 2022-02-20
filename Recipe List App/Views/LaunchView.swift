@@ -20,7 +20,14 @@ struct LaunchView: View {
                 // Show the login form
                 loginFormShowing = true
             } label: {
-                Text("Sign In or Create Account")
+                VStack{
+                    Spacer()
+                    Text("Mix It Up!")
+                        .font(.system(size: 48, weight: .heavy, design: .default))
+                        .foregroundColor(.red)
+                    Spacer()
+                    Text("Sign In or Create Account")
+                }
             }
             .sheet(isPresented: $loginFormShowing, onDismiss: checkLogin) {
                 LoginForm()
